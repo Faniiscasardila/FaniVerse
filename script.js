@@ -51,41 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Testimonial Slider
-    const testimonialSlider = document.querySelector('.testimonials-slider');
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const prevBtn = document.getElementById('prev-testimonial');
-    const nextBtn = document.getElementById('next-testimonial');
-    let currentIndex = 0;
-
-    // Set initial position
-    updateTestimonialSlider();
-
-    // Previous button click
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonialCards.length - 1;
-        updateTestimonialSlider();
-    });
-
-    // Next button click
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex < testimonialCards.length - 1) ? currentIndex + 1 : 0;
-        updateTestimonialSlider();
-    });
-
-    function updateTestimonialSlider() {
-        const cardWidth = testimonialCards[0].offsetWidth;
-        testimonialSlider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
-
-    // Auto slide testimonials every 5 seconds
-    setInterval(() => {
-        currentIndex = (currentIndex < testimonialCards.length - 1) ? currentIndex + 1 : 0;
-        updateTestimonialSlider();
-    }, 5000);
-
-    // Update slider on window resize
-    window.addEventListener('resize', updateTestimonialSlider);
+    // Testimonial section is now static - no slider functionality needed
 
     // FAQ Accordion
     const accordionItems = document.querySelectorAll('.accordion-item');
